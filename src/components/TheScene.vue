@@ -31,6 +31,7 @@ function collision(event) {
   fog="type: linear; color: #a3d0ed; near: 40; far: 50" 
   outline
   simple-grab
+  obb-collider="showColliders: true"
   background="color: #a3d0ed;">
 
     <a-assets @loaded="allAssetsLoaded = true">
@@ -48,7 +49,6 @@ function collision(event) {
       <a-asset-item id="low-poly-island" src="./assets/models/Low-poly-island.glb"></a-asset-item>
 
       <img id="portail-texture" src="./assets/models/portail-texture.jpg"></img>
-      
       <audio id="teleport-sound" src="./assets/audio/teleport-sound.mp3"></audio>
       <audio id="pickup-item" src="./assets/audio/pickup-item.mp3"></audio>
       <audio id="pickup-item-final" src="./assets/audio/pickup-item-final.mp3"></audio>

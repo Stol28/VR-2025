@@ -90,7 +90,7 @@ AFRAME.registerComponent('blink-controls', {
     curveLineWidth: { default: 0.025 },
     curveHitColor: { type: 'color', default: '#4d93fd' },
     curveMissColor: { type: 'color', default: '#ff0000' },
-    curveShootingSpeed: { default: 10, min: 0 },
+    curveShootingSpeed: { default: 7, min: 0 },
     defaultPlaneSize: { default: 100 },
     landingNormal: { type: 'vec3', default: { x: 0, y: 1, z: 0 } },
     landingMaxAngle: { default: '45', min: 0, max: 360 },

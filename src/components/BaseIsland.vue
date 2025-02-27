@@ -19,7 +19,7 @@ function deleteEntity(evt) {
   <a-entity>
     <a-entity gltf-model="#music-island" position="2.7 9.5 -13.5" scale="50 50 50"></a-entity>
     <a-entity gltf-model="#low-poly-island" position="2.7 9.5 -13.5" rotation="0 45 0" scale="14 14 14"></a-entity>
-    <a-entity gltf-model="#skeleton" position="5 9.45 -2.5" scale="10 14 6" look-at="[camera]"></a-entity>
+    <a-entity gltf-model="#skeleton" position="5 9.45 -2.5" scale="8 10 6" look-at="[camera]"></a-entity>
     <a-entity gltf-model="#pannel" position="-5 8.6 -9.5" scale="2 2 2" rotation="0 4 0" ></a-entity>
 
     <a-box 

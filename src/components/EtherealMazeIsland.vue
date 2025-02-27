@@ -6,7 +6,7 @@ const maze = generate(12, 12);
 
 function createMazeEntities(maze) {
     const entities = [];
-    const wallHeight = 3;
+    const wallHeight = 6;
     const wallWidth = 0.1;
     const cellSize = 2; // Double the cell size
     const wallExtension = 0.1; // Increase wall length by 0.1
@@ -67,9 +67,8 @@ const mazeEntities = createMazeEntities(maze);
     <a-entity position="83 5 86.8">
         <template v-for="(entity, index) in mazeEntities" :key="index">
             <a-box :position="entity.position" :width="entity.width" :height="entity.height" :depth="entity.depth"
-                :color="entity.color"></a-box>
+                :color="entity.color" class="wall"></a-box>
         </template>
-
 
         <!-- Point de téléportation -->
         <PortalTeleporter
@@ -81,16 +80,16 @@ const mazeEntities = createMazeEntities(maze);
             :x="0"
             :y="10"
             :z="0"
-            sound = "src: #teleport-sound; position: 22 1.65 -0.9; autoplay: true; loop: true; rolloffFactor: 10; volume: 10"
+            sound="src: #teleport-sound; position: 22 1.65 -0.9; autoplay: true; loop: true; rolloffFactor: 10; volume: 10"
         /> 
     </a-entity>
 
     <a-entity
-    geometry="primitive: plane; height: 24; width: 24;"
-    position="94 5.1 97.8"
-    rotation="-90 0 0"
-    data-role="nav-mesh"
-    material="color: red"
-    visible="true"
-  ></a-entity>
+        geometry="primitive: plane; height: 24; width: 24;"
+        position="94 5.1 97.8"
+        rotation="-90 0 0"
+        data-role="nav-mesh"
+        material="color: red"
+        visible="true"
+    ></a-entity>
 </template>

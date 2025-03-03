@@ -40,7 +40,7 @@ function handleSkeletonClick() {
   }
   if (hasTakenChest.value == true) {
     hasTakenChest.value = false;
-    messages.push("Next, head to the Drum Island. Tap the rhythm on the drum to unlock the key. Only then can you proceed.");
+    messages.push("Next, head to the Drum Island. Find the rhythm on the drum to unlock the key. Only then can you proceed.");
     currentMessageIndex.value = messages.length - 1;
     const runesPortail = document.getElementById('runesPortail');
     if (runesPortail) {
@@ -62,7 +62,7 @@ function handleSkeletonClick() {
 
 <template>
   <a-entity>
-    <!-- <a-entity gltf-model="#low-poly-island" position="2.7 9.5 -13.5" rotation="0 45 0" scale="14 14 14"></a-entity> -->
+    <a-entity gltf-model="#low-poly-island" position="2.7 9.5 -13.5" rotation="0 45 0" scale="14 14 14"></a-entity>
     <a-entity gltf-model="#skeleton" position="4 9.45 -2" scale="8 10 6" look-at="[camera]" clickable outline-on-event
       @click="handleSkeletonClick">
       <!-- Cartoon bubble for the skeleton narrator -->
@@ -91,7 +91,7 @@ function handleSkeletonClick() {
 
     <a-entity visible="false" id="runesPortail">
       <PortalTeleporter position="-0.194 11.3 -10.88" label="Music Runes Island" material="src: #maze-exit-texture"
-        scale="0.5 0.5 0.5" :x="0" :y="5" :z="-90" :rot="0" :cameraEffect="true" :cameraX="0" :cameraY="7"
+        scale="0.5 0.5 0.5" :x="4.75" :y="5.36" :z="-102" :rot="0" :cameraEffect="true" :cameraX="0" :cameraY="7"
         :cameraZ="-90" :cameraRot="0" rotation="0 4 0" />
     </a-entity>
 

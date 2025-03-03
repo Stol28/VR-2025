@@ -21,17 +21,6 @@ import { hasTakenKey } from '../stores/player.js';
         raycaster="far: 4; objects: [clickable]; showLine: false;" position="0 0 -0.1"
         disable-in-vr="component: raycaster; disableInAR: false;" hide-in-vr="hideInAR: false"></a-entity>
       <a-entity id="dummy-hand-right" position="0.3 -0.4 -0.5">
-        <a-gltf-model 
-          v-if="hasTakenChest"
-          id="treasure-chest-dummy"
-          src="#treasure-chest" scale="0.003 0.003 0.003" position="0.005 0.097 -0.01"
-        ></a-gltf-model>
-
-        <a-gltf-model 
-          v-if="hasTakenKey"
-          id="key-dummy"
-          src="#key" scale="0.75 0.75 0.75" position="0.005 -0.3 -0.01"
-        ></a-gltf-model>
       </a-entity>
       <a-entity id="dummy-hand-left" position="-0.3 -0.4 -0.5"></a-entity>
     </a-entity>
@@ -55,6 +44,17 @@ import { hasTakenKey } from '../stores/player.js';
 
     <a-entity id="hand-right" hand-controls="hand: right" laser-controls="hand: right"
       raycaster="far: 4; objects: [clickable]; showLine: true;" position="0 1.5 0" physx-grab>
+
+      <a-gltf-model 
+          v-if="hasTakenChest"
+          id="treasure-chest-dummy"
+          src="#treasure-chest" scale="0.003 0.003 0.003" position="0 0 0" rotation="0 0 90"
+        ></a-gltf-model>
+        <a-gltf-model 
+          v-if="hasTakenKey"
+          id="key-dummy"
+          src="#key" scale="0.3 0.3 0.3" position="-0.025 -0.175 -0.045"
+        ></a-gltf-model>  
       <a-sphere id="hand-right-collider" radius="0.02" visible="false"
         physx-body="type: kinematic; emitCollisionEvents: true">
       </a-sphere>

@@ -5,6 +5,8 @@ import '../aframe/simple-navmesh-constraint.js';
 import '../aframe/blink-controls.js';
 import '../aframe/physx-grab.js';
 import { hasTakenTeleportRing } from '../stores/player.js';
+import { hasTakenChest } from '../stores/player.js';
+import { hasTakenKey } from '../stores/player.js';
 
 </script>
 
@@ -18,7 +20,19 @@ import { hasTakenTeleportRing } from '../stores/player.js';
       <a-entity geometry="primitive: circle; radius: 0.0003;" material="shader: flat; color: white;" cursor
         raycaster="far: 4; objects: [clickable]; showLine: false;" position="0 0 -0.1"
         disable-in-vr="component: raycaster; disableInAR: false;" hide-in-vr="hideInAR: false"></a-entity>
-      <a-entity id="dummy-hand-right" position="0.3 -0.4 -0.5"></a-entity>
+      <a-entity id="dummy-hand-right" position="0.3 -0.4 -0.5">
+        <a-gltf-model 
+          v-if="hasTakenChest"
+          id="treasure-chest-dummy"
+          src="#treasure-chest" scale="0.003 0.003 0.003" position="0.005 0.097 -0.01"
+        ></a-gltf-model>
+
+        <a-gltf-model 
+          v-if="hasTakenKey"
+          id="key-dummy"
+          src="#key" scale="0.75 0.75 0.75" position="0.005 -0.3 -0.01"
+        ></a-gltf-model>
+      </a-entity>
       <a-entity id="dummy-hand-left" position="-0.3 -0.4 -0.5"></a-entity>
     </a-entity>
 

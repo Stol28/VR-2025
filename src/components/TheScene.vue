@@ -31,7 +31,6 @@ function collision(event) {
   fog="type: linear; color: #a3d0ed; near: 40; far: 50" 
   outline
   simple-grab
-  obb-collider="showColliders: true"
   background="color: #a3d0ed;">
 
     <a-assets @loaded="allAssetsLoaded = true">
@@ -39,7 +38,7 @@ function collision(event) {
       <a-asset-item id="base-island" src="./assets/models/Base-island.glb"></a-asset-item>
       <a-asset-item id="music-island" src="./assets/models/Music-island.glb"></a-asset-item>
       <a-asset-item id="drum" src="./assets/models/Drum.glb"></a-asset-item>
-      <a-asset-item id="skeleton" src="./assets/models/skeleton.glb"></a-asset-item>
+      <a-asset-item id="skeleton" src="./assets/models/Skeleton.glb"></a-asset-item>
       <a-asset-item id="hammer" src="./assets/models/Hammer.glb"></a-asset-item>
       <a-asset-item id="bracelet" src="./assets/models/Bracelet.glb"></a-asset-item>
       <a-asset-item id="pannel" src="./assets/models/Pannel.glb"></a-asset-item>
@@ -47,6 +46,9 @@ function collision(event) {
       <a-asset-item id="stone-gate" src="./assets/models/Stone-gate.glb"></a-asset-item>
       <a-asset-item id="Musical-rune" src="./assets/models/Musical-rune.glb"></a-asset-item>
       <a-asset-item id="low-poly-island" src="./assets/models/Low-poly-island.glb"></a-asset-item>
+      <a-asset-item id="treasure-chest" src="./assets/models/Treasure-chest.glb"></a-asset-item>
+      <a-asset-item id="key" src="./assets/models/Key.glb"></a-asset-item>
+
 
       <img id="portail-texture" src="./assets/models/portail-texture.jpg"></img>
 

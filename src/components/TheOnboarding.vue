@@ -19,11 +19,13 @@
 <template>
   <div id="onboarding" v-if="showOnboarding">
     <div>
-      <h1>A-Frame + Vite + Vue Boilerplate</h1>
+      <h1>The island of challenges</h1>
       <p v-if="!loaded">loading...</p>
       <button v-if="loaded" @click="enterScene()">Enter scene</button>
       <div class="licences">
         <section>
+            <h3>You are an adventurer chosen by the <span style="color: #FFD700;">Guardian of Trials</span> to find the hidden treasure. Travel between <span style="color: #1E90FF;">mystical islands</span> protected by puzzles and magical challenges. Use the <span style="color: #32CD32;">Ether Bracelet</span>, teleport from one island to another and solve puzzles.</h3> 
+            <h3>Your goal: to face the ultimate challenge on the <span style="color: #FF4500;">Celestials Islands</span> and prove yourself as the greatest treasure hunter. Will you be up to the task?</h3>
           <h4>Movement modes support</h4>
           <ul>
             <li>

@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import PortalTeleporter from './PortalTeleporter.vue';
 import '../aframe/clickable.js';
 import '../aframe/outline.js';
+import { hasTakenChest } from '../stores/player.js';
 
 const artifacts = ref([
   { id: 1, position: '-95 6 4', collected: false },
@@ -22,12 +23,18 @@ function collectArtifact(artifact) {
     document.getElementById('pickup-item-final').play();
   }
 }
+
+function treasureTaken(evt) {
+  hasTakenChest.value = true;
+}
+
 </script>
 
 <template>
   <a-entity>
     <a-entity gltf-model="#floating-island" position="-101 -4.5 5" scale="10 5 10"></a-entity>
     <a-entity gltf-model="#stone-gate" position="-90 5 -12" scale="1 1 1"></a-entity>
+    <a-entity v-if="puzzleSolved" gltf-model="#treasure-chest" clickable outline-on-event position="-91 5 -10" scale="0.01 0.01 0.01" @click="treasureTaken($event)" :visible="hasTakenChest ? 'false' : 'true'"></a-entity>
 
     <template v-for="artifact in artifacts" :key="artifact.id">
       <a-entity

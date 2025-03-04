@@ -24,10 +24,7 @@ function handleDrumCollision(drumId) {
   // Check if the current sequence matches the correct sequence so far
   for (let i = 0; i < currentSequence.value.length; i++) {
     if (currentSequence.value[i] !== correctSequence[i]) {
-      const failureSound = document.querySelector('#failure');
-      if (failureSound) {
-        failureSound.components.sound.playSound();
-      }
+      document.getElementById('failure-sound').play();
       currentSequence.value = [];
       return;
     }
@@ -35,10 +32,7 @@ function handleDrumCollision(drumId) {
 
   // If the sequence is complete and correct
   if (currentSequence.value.length === correctSequence.length) {
-    const successSound = document.querySelector('#success');
-    if (successSound) {
-      successSound.components.sound.playSound();
-    }
+    document.getElementById('success-sound').play();
     puzzleSolved.value = true;
     removeHammer();
   }
@@ -62,6 +56,7 @@ function rotateHammer(event) {
 }
 
 function keyTaken(evt) {
+  document.getElementById('pickup-key').play();
   hasTakenKey.value = true;
 }
 </script>
@@ -85,8 +80,6 @@ function keyTaken(evt) {
     <a-sound id="drum1-sound" src="#first-drum-sound" autoplay="false" volume="75"></a-sound>
     <a-sound id="drum2-sound" src="#second-drum-sound" autoplay="false" volume="75"></a-sound>
     <a-sound id="drum3-sound" src="#third-drum-sound" autoplay="false" volume="75"></a-sound>
-    <a-sound id="failure" src="#failure-sound-file" autoplay="false" ></a-sound>
-    <a-sound id="success" src="#success-sound-file" autoplay="false" ></a-sound>
 
     <a-box position="2.91 5.74 -101.85" scale="15 15 15" width="0.02" height="0.05" rotation="-90 0 180"
       depth="0.015" color="blue" opacity="0" id="hammer-container" simple-grab clickable outline-on-event @grab="rotateHammer">

@@ -52,13 +52,17 @@ function collision(event) {
       <a-asset-item id="navMesh-rune-island" src="./assets/models/Navmesh-rune-island.gltf"></a-asset-item>
       <a-asset-item id="coins-money" src="./assets/models/coins-money.glb"></a-asset-item>
 
+      <img id="portail-texture" src="/assets/images/portail-texture.jpg" />
+
       <audio id="pickup-item" src="./assets/audio/pickup-item.mp3"></audio>
+      <audio id="pickup-key" src="./assets/audio/pickup-key.mp3"></audio>
       <audio id="pickup-item-final" src="./assets/audio/pickup-item-final.mp3"></audio>
       <audio id="success-sound" src="./assets/audio/success-sound.mp3"></audio>
       <audio id="failure-sound" src="./assets/audio/failure-sound.mp3"></audio>
       <audio id="first-drum-sound" src="./assets/audio/first-drum-sound.mp3"></audio>
       <audio id="second-drum-sound" src="./assets/audio/second-drum-sound.mp3"></audio>
       <audio id="third-drum-sound" src="./assets/audio/third-drum-sound.mp3"></audio>
+      <audio id="skeleton-sound" src="./assets/audio/skeleton-sound.mp3"></audio>
     </a-assets>
 
     <template v-if="allAssetsLoaded">

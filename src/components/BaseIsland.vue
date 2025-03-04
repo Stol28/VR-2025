@@ -32,6 +32,7 @@ function deleteEntity(evt) {
 }
 
 function handleSkeletonClick() {
+  document.getElementById('skeleton-sound').play();
   if (currentMessageIndex.value < messages.length - 1) {
     currentMessageIndex.value++;
   }
@@ -84,10 +85,10 @@ function handleSkeletonClick() {
       <a-entity gltf-model="#bracelet" id="bracelet"></a-entity>
     </a-box>
 
-    <a-entity visible="false" id="relicPortail">
+    <a-entity visible="flase" id="relicPortail">
       <PortalTeleporter position="-1.05 11.3 -10.88" label="Hidden Relics Island" material="src: #maze-exit-texture"
-        scale="0.5 0.5 0.5" :x="-200" :y="4.6" :z="0" :rot="0" :cameraEffect="true" :cameraX="-90" :cameraY="7"
-        :cameraZ="0" :cameraRot="0" rotation="0 4 0" />
+        scale="0.5 0.5 0.5" :x="-184" :y="5.2" :z="7" :rot="0" :cameraEffect="true" :cameraX="-184" :cameraY="5.2"
+        :cameraZ="7" :cameraRot="0" rotation="0 4 0" />
     </a-entity>
 
     <a-entity visible="false" id="runesPortail">

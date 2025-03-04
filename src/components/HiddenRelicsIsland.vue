@@ -53,6 +53,7 @@ function treasureTaken(evt) {
       ref="pickupSound"
       src="#pickup-item"
       autoplay="false"
+      volume="125"
     ></a-sound>
 
     <a-entity v-if="puzzleSolved">
@@ -63,12 +64,11 @@ function treasureTaken(evt) {
         scale="1.4 2.4 1"
         rotation="0 0 0"
         :x="1"
-        :y="10"
+        :y="10.1"
         :z="0"
         :rot="0"
         :cameraEffect="false"
       /> 
-      <!-- a ajouter du son quand le portail apparait  -->
     </a-entity>
 
     <a-entity

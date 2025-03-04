@@ -17,9 +17,10 @@ const showBraceletContainer = ref(false);
 
 function deleteEntity(evt) {
   hasTakenTeleportRing.value = true;
-  const relicPortail = document.getElementById('relicPortail');
-  if (relicPortail) {
-    relicPortail.setAttribute('visible', 'true');
+  document.getElementById('skeleton-sound').play();
+  const drumPortail = document.getElementById('drumPortail');
+  if (drumPortail) {
+    drumPortail.setAttribute('visible', 'true');
   }
   if (evt.target.parentNode) {
     evt.target.parentNode.removeChild(evt.target);
@@ -41,6 +42,7 @@ function handleSkeletonClick() {
   }
   if (hasTakenChest.value == true) {
     hasTakenChest.value = false;
+    document.getElementById('pickup-chest').play();
     messages.push("Next, head to the Drum Island. Find the rhythm on the drum to unlock the key. Only then can you proceed.");
     currentMessageIndex.value = messages.length - 1;
     const runesPortail = document.getElementById('runesPortail');
@@ -51,11 +53,13 @@ function handleSkeletonClick() {
   }
   if (hasTakenKey.value == true) {
     hasTakenKey.value = false;
+    document.getElementById('pickup-key').play();
     messages.push("You have done it ! Congratulation adventurer, you really proved your worth. ");
     currentMessageIndex.value = messages.length - 1;
     const moneyCoin = document.getElementById('reward');
     if (moneyCoin) {
       moneyCoin.setAttribute('visible', 'true');
+      document.getElementById('end-sound').play();
     }
   }
 }
@@ -85,7 +89,7 @@ function handleSkeletonClick() {
       <a-entity gltf-model="#bracelet" id="bracelet"></a-entity>
     </a-box>
 
-    <a-entity visible="flase" id="relicPortail">
+    <a-entity visible="false" id="drumPortail">
       <PortalTeleporter position="-1.05 11.3 -10.88" label="Hidden Relics Island" material="src: #maze-exit-texture"
         scale="0.5 0.5 0.5" :x="-184" :y="5.2" :z="7" :rot="0" :cameraEffect="true" :cameraX="-184" :cameraY="5.2"
         :cameraZ="7" :cameraRot="0" rotation="0 4 0" />

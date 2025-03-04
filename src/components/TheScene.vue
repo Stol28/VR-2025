@@ -37,13 +37,12 @@ function collision(event) {
       <a-asset-item id="base-island" src="./assets/models/Base-island.glb"></a-asset-item>
       <a-asset-item id="music-island" src="./assets/models/Music-island.glb"></a-asset-item>
       <a-asset-item id="drum" src="./assets/models/Drum.glb"></a-asset-item>
-      <a-asset-item id="skeleton" src="./assets/models/Skeleton.glb"></a-asset-item>
+      <a-asset-item id="skeleton" src="./assets/models/Skeleton-normal.glb"></a-asset-item>
       <a-asset-item id="hammer" src="./assets/models/Hammer.glb"></a-asset-item>
       <a-asset-item id="bracelet" src="./assets/models/Bracelet.glb"></a-asset-item>
       <a-asset-item id="pannel" src="./assets/models/Pannel.glb"></a-asset-item>
       <a-asset-item id="artefact" src="./assets/models/Artefact.glb"></a-asset-item>
       <a-asset-item id="stone-gate" src="./assets/models/Stone-gate.glb"></a-asset-item>
-      <a-asset-item id="Musical-rune" src="./assets/models/Musical-rune.glb"></a-asset-item>
       <a-asset-item id="low-poly-island" src="./assets/models/Low-poly-island.glb"></a-asset-item>
       <a-asset-item id="treasure-chest" src="./assets/models/Treasure-chest.glb"></a-asset-item>
       <a-asset-item id="key" src="./assets/models/Key.glb"></a-asset-item>
@@ -63,6 +62,9 @@ function collision(event) {
       <audio id="second-drum-sound" src="./assets/audio/second-drum-sound.mp3"></audio>
       <audio id="third-drum-sound" src="./assets/audio/third-drum-sound.mp3"></audio>
       <audio id="skeleton-sound" src="./assets/audio/skeleton-sound.mp3"></audio>
+      <audio id="end-sound" src="./assets/audio/end-sound.mp3" volume="40"></audio>
+      <audio id="pickup-chest" src="./assets/audio/pickup-chest.mp3"></audio>
+      <audio id="pickup-hammer" src="./assets/audio/pickup-hammer.mp3"></audio>
     </a-assets>
 
     <template v-if="allAssetsLoaded">

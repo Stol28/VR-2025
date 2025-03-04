@@ -20,11 +20,15 @@ function collectArtifact(artifact) {
   collectedArtifacts.value++;
   if (collectedArtifacts.value === totalArtifacts) {
     puzzleSolved.value = true;
-    document.getElementById('pickup-item-final').play();
+    const finishSound = document.querySelector(`#finish-sound`);
+  if (finishSound) {
+    finishSound.components.sound.playSound();
+  }
   }
 }
 
 function treasureTaken(evt) {
+  document.getElementById('pickup-chest').play();
   hasTakenChest.value = true;
 }
 

@@ -5,7 +5,7 @@ import '../aframe/clickable.js';
 import '../aframe/outline.js';
 import { hasTakenKey } from '../stores/player.js';
 
-const correctSequence = ['drum3', 'drum2']; // Séquence correcte des tambours
+const correctSequence = ['drum3', 'drum2', 'drum3', 'drum1']; // Séquence correcte des tambours
 const currentSequence = ref([]);
 const puzzleSolved = ref(false);
 
@@ -16,7 +16,6 @@ function handleDrumCollision(drumId) {
 
   // Jouer le son du tambour correspondant
   const drumSound = document.querySelector(`#${drumId}-sound`);
-  console.log(drumSound);
   if (drumSound) {
     drumSound.components.sound.playSound();
   }
@@ -50,6 +49,7 @@ function removeHammer() {
 }
 
 function rotateHammer(event) {
+  document.getElementById('pickup-hammer').play();
   const hammer = document.querySelector('#hammer-element');
   hammer.setAttribute('rotation', '-90 0 0');
   hammer.setAttribute('position', '0.005 0 -0.02');
@@ -64,7 +64,6 @@ function keyTaken(evt) {
 <template>
   <a-entity>
     <a-entity gltf-model="#music-island" position="5 4 -101" rotation="0 180 0" scale="0.9 0.9 0.9"></a-entity>
-    <!-- Drums displayed side by side with boxes and obb-collider -->
     <a-entity position="5 5 -101" rotation="0 0 0">
       <a-box id="drum1-box" position="-1.1 1 -3.6" scale="1 1 1" height="1.4" opacity="0" obb-collider @obbcollisionended="handleDrumCollision('drum1')">
         <a-entity id="drum1" gltf-model="#drum" position="0 -0.7 0" scale="3 3 3"></a-entity>
@@ -92,7 +91,6 @@ function keyTaken(evt) {
       <PortalTeleporter label="Exit Island" geometry="primitive: plane" material="src: #portail-texture"
         position="4.58 6.59 -100.74" scale="1.76 3.29 1" rotation="0 172 0" :x="1" :y="10" :z="0" :rot="0"
         :cameraEffect="false" />
-      <!-- a ajouter du son quand le portail apparait  -->
     </a-entity>
 
     <a-entity v-if="puzzleSolved" gltf-model="#key" clickable outline-on-event position="2.82 5.2 -102"

@@ -50,11 +50,11 @@ function handleSkeletonClick() {
   }
   if (hasTakenKey.value == true) {
     hasTakenKey.value = false;
-    messages.push("Final step: explore the Maze. This last item will guide you to the truth.");
+    messages.push("You have done it ! Congratulation adventurer, you really proved your worth. ");
     currentMessageIndex.value = messages.length - 1;
-    const mazePortail = document.getElementById('mazePortail');
-    if (mazePortail) {
-      mazePortail.setAttribute('visible', 'true');
+    const moneyCoin = document.getElementById('reward');
+    if (moneyCoin) {
+      moneyCoin.setAttribute('visible', 'true');
     }
   }
 }
@@ -63,6 +63,7 @@ function handleSkeletonClick() {
 <template>
   <a-entity>
     <a-entity gltf-model="#low-poly-island" position="2.7 9.5 -13.5" rotation="0 45 0" scale="14 14 14"></a-entity>
+    <a-entity gltf-model="#coins-money" position="4 9.45 -2" visible="false" id="reward"></a-entity>
     <a-entity gltf-model="#skeleton" position="4 9.45 -2" scale="8 10 6" look-at="[camera]" clickable outline-on-event
       @click="handleSkeletonClick">
       <!-- Cartoon bubble for the skeleton narrator -->
@@ -84,21 +85,15 @@ function handleSkeletonClick() {
     </a-box>
 
     <a-entity visible="false" id="relicPortail">
-      <PortalTeleporter position="-1.5 11.3 -10.88" label="Hidden Relics Island" material="src: #maze-exit-texture"
-        scale="0.5 0.5 0.5" :x="-90" :y="5" :z="0" :rot="0" :cameraEffect="true" :cameraX="-90" :cameraY="7"
+      <PortalTeleporter position="-1.05 11.3 -10.88" label="Hidden Relics Island" material="src: #maze-exit-texture"
+        scale="0.5 0.5 0.5" :x="-200" :y="4.6" :z="0" :rot="0" :cameraEffect="true" :cameraX="-90" :cameraY="7"
         :cameraZ="0" :cameraRot="0" rotation="0 4 0" />
     </a-entity>
 
     <a-entity visible="false" id="runesPortail">
-      <PortalTeleporter position="-0.194 11.3 -10.88" label="Music Runes Island" material="src: #maze-exit-texture"
+      <PortalTeleporter position="0.8 11.3 -10.88" label="Music Runes Island" material="src: #maze-exit-texture"
         scale="0.5 0.5 0.5" :x="4.75" :y="5.36" :z="-102" :rot="0" :cameraEffect="true" :cameraX="0" :cameraY="7"
         :cameraZ="-90" :cameraRot="0" rotation="0 4 0" />
-    </a-entity>
-
-    <a-entity visible="false" id="mazePortail">
-      <PortalTeleporter position="1 11.3 -10.88" label="Ethereal Maze Island" material="src: #maze-exit-texture"
-        scale="0.5 0.5 0.5" :x="95" :y="5" :z="98.8" :rot="0" :cameraEffect="true" :cameraX="95" :cameraY="7"
-        :cameraZ="98.8" :cameraRot="0" rotation="0 4 0" />
     </a-entity>
 
     <a-entity geometry="primitive: plane; height: 12; width: 3.7;" position="0.2 10 -5.7" rotation="-90 4.9 0"

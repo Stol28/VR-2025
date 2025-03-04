@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import BaseIsland from './BaseIsland.vue';
 import MusicRunesIsland from './MusicRunesIsland.vue';
-import EtherealMazeIsland from './EtherealMazeIsland.vue';
 import HiddenRelicsIsland from './HiddenRelicsIsland.vue';
 import TheCameraRig from './TheCameraRig.vue';
 
@@ -35,7 +34,6 @@ function collision(event) {
   background="color: #a3d0ed;">
 
     <a-assets @loaded="allAssetsLoaded = true">
-      <a-asset-item id="floating-island" src="./assets/models/Floating-island.glb"></a-asset-item>
       <a-asset-item id="base-island" src="./assets/models/Base-island.glb"></a-asset-item>
       <a-asset-item id="music-island" src="./assets/models/Music-island.glb"></a-asset-item>
       <a-asset-item id="drum" src="./assets/models/Drum.glb"></a-asset-item>
@@ -51,11 +49,9 @@ function collision(event) {
       <a-asset-item id="key" src="./assets/models/Key.glb"></a-asset-item>
       <a-asset-item id="table" src="./assets/models/Table.glb"></a-asset-item>
       <a-asset-item id="artefact-island" src="./assets/models/Artefact-island.glb"></a-asset-item>
+      <a-asset-item id="navMesh-rune-island" src="./assets/models/Navmesh-rune-island.gltf"></a-asset-item>
+      <a-asset-item id="coins-money" src="./assets/models/coins-money.glb"></a-asset-item>
 
-
-      <img id="portail-texture" src="./assets/models/portail-texture.jpg"></img>
-
-      <!-- <audio id="teleport-sound" src="./assets/audio/teleport-sound.mp3"></audio> -->
       <audio id="pickup-item" src="./assets/audio/pickup-item.mp3"></audio>
       <audio id="pickup-item-final" src="./assets/audio/pickup-item-final.mp3"></audio>
       <audio id="success-sound" src="./assets/audio/success-sound.mp3"></audio>
@@ -69,9 +65,6 @@ function collision(event) {
 
       <!-- Ajout de l'île de base -->
       <BaseIsland />
-
-      <!-- Ajout de l'île du labyrinthe -->
-      <EtherealMazeIsland />
 
       <!-- Ajout de l'île des relics -->
       <HiddenRelicsIsland />

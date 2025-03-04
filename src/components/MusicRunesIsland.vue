@@ -14,7 +14,7 @@ function handleDrumCollision(drumId) {
 
   currentSequence.value.push(drumId);
 
-  // Jouer le son du tambour correspondant  
+  // Jouer le son du tambour correspondant
   const drumSound = document.querySelector(`#${drumId}-sound`);
   console.log(drumSound);
   if (drumSound) {
@@ -24,7 +24,10 @@ function handleDrumCollision(drumId) {
   // Check if the current sequence matches the correct sequence so far
   for (let i = 0; i < currentSequence.value.length; i++) {
     if (currentSequence.value[i] !== correctSequence[i]) {
-      document.getElementById('failure-sound').components.sound.playSound();
+      const failureSound = document.querySelector('#failure');
+      if (failureSound) {
+        failureSound.components.sound.playSound();
+      }
       currentSequence.value = [];
       return;
     }
@@ -32,7 +35,10 @@ function handleDrumCollision(drumId) {
 
   // If the sequence is complete and correct
   if (currentSequence.value.length === correctSequence.length) {
-    document.getElementById('success-sound').components.sound.playSound();
+    const successSound = document.querySelector('#success');
+    if (successSound) {
+      successSound.components.sound.playSound();
+    }
     puzzleSolved.value = true;
     removeHammer();
   }
@@ -79,8 +85,10 @@ function keyTaken(evt) {
     <a-sound id="drum1-sound" src="#first-drum-sound" autoplay="false" volume="75"></a-sound>
     <a-sound id="drum2-sound" src="#second-drum-sound" autoplay="false" volume="75"></a-sound>
     <a-sound id="drum3-sound" src="#third-drum-sound" autoplay="false" volume="75"></a-sound>
+    <a-sound id="failure" src="#failure-sound-file" autoplay="false" ></a-sound>
+    <a-sound id="success" src="#success-sound-file" autoplay="false" ></a-sound>
 
-    <a-box position="6 6 -102" scale="15 15 15" width="0.02" height="0.05"
+    <a-box position="2.91 5.74 -101.85" scale="15 15 15" width="0.02" height="0.05" rotation="-90 0 180"
       depth="0.015" color="blue" opacity="0" id="hammer-container" simple-grab clickable outline-on-event @grab="rotateHammer">
       <a-box position="0 0 0" width="0.02" height="0.05" depth="0.015" id="hammer-element" obb-collider color="blue" opacity="0">
         <a-entity gltf-model="#hammer" rotation="12 12 0" position="-0.010 -0.025 -0.003"></a-entity>
@@ -89,7 +97,7 @@ function keyTaken(evt) {
 
     <a-entity v-if="puzzleSolved">
       <PortalTeleporter label="Exit Island" geometry="primitive: plane" material="src: #portail-texture"
-        position="4.58 6.59 -100.74" scale="1.76 3.29 1" rotation="0 172 0" :x="0" :y="10" :z="0" :rot="0"
+        position="4.58 6.59 -100.74" scale="1.76 3.29 1" rotation="0 172 0" :x="1" :y="10" :z="0" :rot="0"
         :cameraEffect="false" />
       <!-- a ajouter du son quand le portail apparait  -->
     </a-entity>

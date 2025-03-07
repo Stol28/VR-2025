@@ -68,7 +68,7 @@ function treasureTaken(evt) {
         scale="1.4 2.4 1"
         rotation="0 0 0"
         :x="1"
-        :y="10.1"
+        :y="10.2"
         :z="0"
         :rot="0"
         :cameraEffect="false"

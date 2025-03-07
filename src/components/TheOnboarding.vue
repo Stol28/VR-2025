@@ -48,7 +48,7 @@ function enterScene() {
         </section>
         <section>
           <h4>Source code</h4>
-          <blockquote><a href="https://github.com/Stol28/VR-2025">Github repo</a></blockquote>
+          <blockquote><a href="https://github.com/Stol28/VR-2025">Github link repo</a></blockquote>
         </section>
         <dl>
           <dt>

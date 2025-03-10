@@ -26,7 +26,6 @@ function collision(event) {
 
 <template>
   <a-scene 
-  stats 
   fog="type: linear; color: #a3d0ed; near: 40; far: 50" 
   outline
   simple-grab
